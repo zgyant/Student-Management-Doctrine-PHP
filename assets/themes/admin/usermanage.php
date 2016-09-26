@@ -21,12 +21,12 @@
 
         <form role="form" method="post" action="action.php">
             <div class="form-group">
-                <label>Username</label>
-                <input class="form-control" name="username" placeholder="Enter Username">
+               <p> <label>Username</label>
+                <input class="form-control" name="username" placeholder="Enter Username"></p>
             </div>
             <div class="form-group">
-                <label>Password</label>
-                <input class="form-control" type="password" name="password" placeholder="Enter Password">
+             <p>   <label>Password</label>
+                <input class="form-control" type="password" name="password" placeholder="Enter Password"></p>
             </div>
             <div class="form-group">
             <label for="sel1">Type:</label>
@@ -38,7 +38,7 @@
     </div>
             <button type="submit" name="adduser"  class="btn btn-default">Add User</button>
         </form>
-<br/>
+<br/><div class="privDiv">
         <h3>Edit Privileges</h3>
         <form role="form" method="post" action="action.php">
             <div class="form-group">
@@ -58,15 +58,21 @@
             <div class="checkbox">
                 <label><input type="checkbox" name="adddetails" value="1">Add Details</label>
             </div>
-            <div class="checkbox">
-                <label><input type="checkbox" name="deletedetails" value="1">Delete Details</label>
+            <div class="checkbox" style="display: none;">
+                <label><input type="checkbox" name="deletedetails" value="1" >Delete Details</label>
             </div>
 
             <button type="submit" name="permission"  class="btn btn-default">Edit Privileges</button>
         </form>
-
+        </div>
     </div>
     <!-- /.container-fluid -->
 
 </div>
 <!-- /#page-wrapper -->
+<style>
+    .form-group{
+        width: 15%;
+    }
+
+</style>
