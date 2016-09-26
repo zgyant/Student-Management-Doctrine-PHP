@@ -47,7 +47,7 @@
                 require_once "bootstrap.php";
                 $repository = $entityManager->getRepository('User')->findAll();
                 foreach ($repository as $resultContent) {
-                    echo '<option>'.$resultContent->getUsername().'</option>';
+                    echo '<option>' . $resultContent->getUsername() . '</option>';
                 }
                 ?>
             </select>

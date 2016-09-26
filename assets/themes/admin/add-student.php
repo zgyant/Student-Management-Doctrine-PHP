@@ -10,7 +10,7 @@
                 </h1>
                 <ol class="breadcrumb">
                     <li>
-                        <i class="fa fa-dashboard"></i>  <a href="index.php">Dashboard</a>
+                        <i class="fa fa-dashboard"></i> <a href="index.php">Dashboard</a>
                     </li>
                     <li class="active">
                         <i class="fa fa-table"></i> Add Student
@@ -57,16 +57,15 @@
                     </div>
 
 
-
                     <div class="form-group">
                         <label>Additional Description</label>
                         <textarea class="form-control" name="add_desc" rows="3"></textarea>
                     </div>
 
 
-
                     <div class="form-group">
                         <label>Activity</label>
+
                         <div class="radio">
                             <label>
                                 <input type="radio" name="optionsRadios" id="optionsRadios1" value="1" checked>Active
@@ -79,7 +78,7 @@
                         </div>
                     </div>
 
-                    <button type="submit" name="add_student"  class="btn btn-default">Insert Records</button>
+                    <button type="submit" name="add_student" class="btn btn-default">Insert Records</button>
 
                     <button type="reset" class="btn btn-default">Reset</button>
 
