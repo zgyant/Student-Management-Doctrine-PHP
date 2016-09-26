@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="StudentDetail" table="student_detail">
+    <id name="cardNum" type="integer" column="card_num">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="studentName" type="string" column="student_name" length="45" nullable="false"/>
+    <field name="address" type="string" column="address" length="45" nullable="false"/>
+    <field name="contactNum" type="string" column="contact_num" length="50" nullable="false"/>
+    <field name="level" type="string" column="level" length="50" nullable="false"/>
+    <field name="details" type="text" column="details" length="65535" nullable="false"/>
+    <field name="activity" type="boolean" column="activity" nullable="false"/>
+  </entity>
+</doctrine-mapping>
