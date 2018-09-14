@@ -1,7 +1,5 @@
-
 </div>
 <!-- /#wrapper -->
-
 
 
 <!-- Bootstrap Core JavaScript -->

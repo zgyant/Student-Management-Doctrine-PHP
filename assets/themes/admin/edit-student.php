@@ -29,7 +29,6 @@
             $level = $resultContent->getLevel();
             $desc = $resultContent->getDetails();
         }
-
         ?>
         <div class="row">
             <div class="col-lg-8">

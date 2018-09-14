@@ -1,20 +1,15 @@
-
-<!DOCTYPE html>
+<?php
+ob_start();
+?>
 <html lang="en">
-
 <head>
-
-
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="assets/resources/images/favicon.ico" type="image/x-icon"/>
-
     <title>SMS | Dashboard</title>
-
     <!-- jQuery -->
     <script src="assets/resources/js/jquery.js"></script>
     <script src="assets/resources/js/jquery.dataTables.js"></script>
@@ -50,7 +45,8 @@
 <div id="wrapper">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background: #f8f8f8;border-color:#e7e7e7;color: black;">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"
+         style="background: #f8f8f8;border-color:#e7e7e7;color: black;">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -66,7 +62,8 @@
 
 
             <li class="dropdown">
-                <a href="#" style="color:black;" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $_SESSION['user_name'] ?><b class="caret"></b></a>
+                <a href="#" style="color:black;" class="dropdown-toggle" data-toggle="dropdown"><i
+                        class="fa fa-user"></i> <?php echo $_SESSION['user_name'] ?><b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li>
                         <a href="userguide.pdf" target="_blank"><i class="fa fa-fw fa-info"></i> Help</a>
@@ -88,10 +85,11 @@
                     <a href="index.php?action=dashboard"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                 </li>
                 <li>
-                        <a href="index.php?action=transaction"><i class="fa fa-area-chart"></i> Transactions</a>
+                    <a href="index.php?action=transaction"><i class="fa fa-area-chart"></i> Transactions</a>
                 </li>
                 <li>
-                    <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-graduation-cap"></i> Students <i class="fa fa-fw fa-caret-down"></i></a>
+                    <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i
+                            class="fa fa-graduation-cap"></i> Students <i class="fa fa-fw fa-caret-down"></i></a>
                     <ul id="demo" class="collapse">
 
                         <li>
@@ -104,16 +102,13 @@
                     </ul>
                 </li>
                 <?php
-                if ($_SESSION['user_type']=='admin')
-                {
+                if ($_SESSION['user_type'] == 'admin') {
                     echo ' <li>
                             <a href="index.php?action=usermanage"><i class="fa fa-group"></i> Manage Users</a>
                         </li>';
-                }else
-                {
+                } else {
                     echo '';
                 }
-
                 ?>
             </ul>
         </div>

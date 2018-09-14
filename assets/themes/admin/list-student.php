@@ -8,16 +8,31 @@
                 <h1 class="page-header">
                     List Student/s
                 </h1>
+
                 <ol class="breadcrumb">
                     <li>
                         <i class="fa fa-dashboard"></i> <a href="index.php">Dashboard</a>
                     </li>
+
                     <li class="active">
                         <i class="fa fa-table"></i> List Students
                     </li>
+					
+					  <?php
+                if ($_SESSION['user_type'] == 'admin') {
+                    echo '<span style="float:right"><a href="extraFun.php?action=toExcel">Export</a>
+                    </span>';
+                } else {
+                    echo '';
+                }
+                ?>
+					
+                    
                 </ol>
+
             </div>
         </div>
+
         <div class="table-responsive">
             <table class="table table-hover" id="listTable">
                 <thead>
@@ -28,10 +43,12 @@
                 </tr>
                 </thead>
                 <tbody>
-
                 <?php
                 require_once "bootstrap.php";
+                require_once "extraFun.php";
+				//Choosing Repo and extracting data
                 $repository = $entityManager->getRepository('StudentDetail')->findAll();
+
                 foreach ($repository as $resultContent) {
                     $studentname = $resultContent->getStudentName();
                     $id = $resultContent->getCardNum();
@@ -40,24 +57,21 @@
                         $active = "Active";
                     else
                         $active = "Inactive";
-                    //$mid = ceil(mysql_num_rows($resultContent->getStudentName()/2));
-                    //echo $mid;
                     if ($active == "Inactive") {
                         echo '<tr class="danger"><td>' . $id . '</td><td><a href="index.php?action=edit-student&id=' . $id . '">' . $studentname . '</a></td><td>' . $active . '</td></tr>';
 
                     } else {
                         echo '<tr class="active"><td>' . $id . '</td><td><a href="index.php?action=edit-student&id=' . $id . '">' . $studentname . '</a></td><td>' . $active . '</td></tr>';
                     }
-
                 }
                 ?>
                 </tbody>
             </table>
         </div>
+
+
         <div class="row">
-
         </div>
-
     </div>
 
 </div>
@@ -68,5 +82,5 @@
 <script>
     $(function () {
         $("#listTable").dataTable();
-    })
+    });
 </script>

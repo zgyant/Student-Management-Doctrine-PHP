@@ -1,6 +1,5 @@
 <?php
 {
-
     require_once "bootstrap.php";
     $repository = $entityManager->getRepository('StudentDetail')->findAll();
     $stdnts = array();

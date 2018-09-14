@@ -1,6 +1,11 @@
 <?php
 if (isset($_GET['msg'])) {
 
+    if ($_GET['msg'] == 'ss') {
+        echo ' <div class="alert alert-danger  fade in" style="margin-bottom: 0;border-radius: 0">
+                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
+        echo ' <strong>404 | </strong> The Page <u>"' . $_SESSION['url'] . '</u>" is not available.';
+    }
     if ($_GET['msg'] == 'edited') {
         echo ' <div class="alert alert-success  fade in"  style="margin-bottom: 0;border-radius: 0">
                   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
@@ -37,7 +42,9 @@ if (isset($_GET['msg'])) {
 if (isset($_SESSION['user_login']) && $_SESSION['user_login'] == 'USER_LOGIN_YES') {
     include("assets/themes/admin-dash.php");
     if ($_SERVER['REQUEST_URI'] == "/CollegeProject/index.php") {
-
+        echo "<script>location.href = 'index.php?action=dashboard'</script>";
+    }
+    if ($_SERVER['REQUEST_URI'] == "/CollegeProject/") {
         echo "<script>location.href = 'index.php?action=dashboard'</script>";
     }
 } else {
